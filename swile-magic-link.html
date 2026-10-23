@@ -900,6 +900,8 @@
           btn.setAttribute('data-lang', en ? 'en' : 'fr');
           btn.setAttribute('aria-checked', en ? 'true' : 'false');
         }
+        // la hauteur des textes change : la frise et tout ce qui se mesure au chargement doivent se recaler
+        try { window.dispatchEvent(new Event('resize')); } catch (e) {}
         if (save) {
           try { localStorage.setItem('lang', lang); } catch (e) {}
           try {
