@@ -1162,15 +1162,67 @@
   /* fin de page : séparée du contenu par un filet */
   .contact-end { margin-top: clamp(40px, 6vw, 64px) !important; padding-top: 24px; border-top: 1px solid var(--border); }
   .foot-meta { margin: 10px 0 0 !important; font-size: 0.78rem; color: var(--ink-faint); }
-  /* bouton de langue, dans la barre de navigation */
-  .dock-lang {
+  /* interrupteur de langue FR / EN dans la barre : la langue active est en bleu, le curseur glisse */
+  .lang-switch {
+    position: relative;
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    padding: 3px;
+    margin: 0 4px 0 0;
     border: 0;
-    background: transparent;
+    border-radius: 10px;
+    background: var(--surface-alt);
+    box-shadow: inset 0 0 0 1px var(--border);
     cursor: pointer;
-    min-width: 40px;
-    padding: 0 12px;
     font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
     letter-spacing: 0.04em;
+    line-height: 1;
+  }
+  .ls-opt {
+    position: relative;
+    z-index: 1;
+    width: 34px;
+    text-align: center;
+    color: var(--ink-soft);
+    transition: color 0.25s ease;
+  }
+  .ls-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 34px;
+    height: 26px;
+    border-radius: 7px;
+    background: var(--accent);
+    box-shadow: 0 2px 6px rgba(var(--shadow-color), 0.22);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .lang-switch[data-lang="en"] .ls-thumb { transform: translateX(34px); }
+  .lang-switch[data-lang="fr"] .ls-opt[data-l="fr"],
+  .lang-switch[data-lang="en"] .ls-opt[data-l="en"] { color: #FFFFFF; }
+  .lang-switch:hover .ls-opt { color: var(--ink); }
+  .lang-switch[data-lang="fr"]:hover .ls-opt[data-l="fr"],
+  .lang-switch[data-lang="en"]:hover .ls-opt[data-l="en"] { color: #FFFFFF; }
+  .lang-switch:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .lang-switch:active .ls-thumb { transform: scale(0.96); }
+  .lang-switch[data-lang="en"]:active .ls-thumb { transform: translateX(34px) scale(0.96); }
+  @media (prefers-reduced-motion: reduce) { .ls-thumb, .ls-opt { transition: none; } }
+  /* petits téléphones : la barre se resserre pour garder de la marge sur les côtés */
+  @media (max-width: 400px) {
+    .dock-tab { padding: 0 10px; }
+    .dock-tab.is-home { width: 36px; }
+    .ls-opt { width: 30px; }
+    .ls-thumb { width: 30px; }
+    .lang-switch[data-lang="en"] .ls-thumb { transform: translateX(30px); }
+    .lang-switch[data-lang="en"]:active .ls-thumb { transform: translateX(30px) scale(0.96); }
+  }
+  @media (max-width: 340px) {
+    .dock-tab { padding: 0 6px; }
+    .lang-switch { margin-right: 2px; }
   }
 </style>
 </head>
@@ -1431,7 +1483,7 @@
       <a class="dock-tab is-home" href="eloise-portfolio.html" aria-label="Accueil" title="Accueil"><svg class="dock-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12.4843 4.23921C12.1945 4.03224 11.8053 4.03224 11.5155 4.23921L3.59888 9.89397L4.56761 11.2502L11.9999 5.9414L19.4322 11.2502L20.401 9.89397L12.4843 4.23921ZM18.3176 12.5726L12.4843 8.40588C12.1945 8.19891 11.8053 8.19891 11.5155 8.40588L5.68221 12.5726C5.46322 12.729 5.33324 12.9815 5.33324 13.2507V18.6673C5.33324 19.1276 5.70634 19.5007 6.16658 19.5007H17.8332C18.2935 19.5007 18.6665 19.1276 18.6665 18.6673V13.2507C18.6665 12.9815 18.5366 12.729 18.3176 12.5726ZM6.99991 17.834V13.6795L11.9999 10.1081L16.9999 13.6795V17.834H6.99991Z" fill="currentColor"/></svg><span class="dock-full">Accueil</span><span class="dock-short">Accueil</span></a>
       <a class="dock-tab" href="oodrive-talk.html" aria-label="Oodrive Talk" aria-current="page"><span class="dock-full">Oodrive Talk</span><span class="dock-short">Talk</span></a>
       <a class="dock-tab" href="swile-magic-link.html" aria-label="Swile Magic Link"><span class="dock-full">Swile Magic Link</span><span class="dock-short">Magic Link</span></a>
-      <span class="dock-sep" aria-hidden="true"></span><button type="button" class="dock-tab dock-lang" id="langToggle" lang="en" aria-label="View the site in English" title="English"><span>EN</span></button>
+      <span class="dock-sep" aria-hidden="true"></span><button type="button" class="lang-switch" id="langToggle" role="switch" aria-checked="false" data-lang="fr" aria-label="English version" title="FR / EN"><span class="ls-thumb" aria-hidden="true"></span><span class="ls-opt" data-l="fr" lang="fr">FR</span><span class="ls-opt" data-l="en" lang="en">EN</span></button>
       <span class="dock-more"><span class="dock-sep" aria-hidden="true"></span><button type="button" class="dock-top" id="dockTop" aria-label="Revenir en haut de la page" title="Revenir en haut"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 7.828V20h-2V7.828l-5.364 5.364-1.414-1.414L12 4l7.778 7.778-1.414 1.414L13 7.828Z" fill="currentColor"/></svg></button></span>
     </div>
   </nav>
@@ -1607,10 +1659,8 @@
         document.title = en ? TITLE_EN : frTitle;
         if (md) { md.content = en ? DESC_EN : frDesc; }
         if (btn) {
-          btn.querySelector('span').textContent = en ? 'FR' : 'EN';
-          btn.setAttribute('lang', en ? 'fr' : 'en');
-          btn.setAttribute('aria-label', en ? 'Afficher le site en français' : 'View the site in English');
-          btn.setAttribute('title', en ? 'Français' : 'English');
+          btn.setAttribute('data-lang', en ? 'en' : 'fr');
+          btn.setAttribute('aria-checked', en ? 'true' : 'false');
         }
         if (save) {
           try { localStorage.setItem('lang', lang); } catch (e) {}
