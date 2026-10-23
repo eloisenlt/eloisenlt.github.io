@@ -262,6 +262,9 @@
     flex-direction: column;
     gap: 14px;
   }
+  /* une liste au milieu du texte respire comme un paragraphe */
+  p + .list { margin-top: 16px; }
+  .list + p { margin-top: 20px; }
   .list li {
     padding-left: 22px;
     position: relative;
