@@ -1280,7 +1280,8 @@
   }
   /* fiche en image : la fenêtre défile, l’image garde une largeur lisible */
   .demo.is-doc { width: min(760px, 92vw); }
-  .demo-scroll { max-height: 90vh; overflow-y: auto; border-radius: var(--radius); background: var(--surface); }
+  .demo-scroll { max-height: 90vh; overflow-y: auto; border-radius: var(--radius); background: #FFFFFF; clip-path: inset(0 round var(--radius)); }
+  .demo.is-doc { background: #FFFFFF; overflow: visible; }
   .demo-scroll img { display: block; width: 100%; height: auto; }
   .demo-cap { margin: 0; padding: 12px 20px 16px; font-size: 0.82rem; color: var(--ink-soft); }
   .doc-open {
@@ -1562,8 +1563,7 @@
   <dialog class="demo is-doc" id="docDialog" aria-label="Exemple de fiche de comportement" tabindex="-1">
     <button type="button" class="demo-close" id="docClose" aria-label="Fermer l’exemple"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
     <div class="demo-scroll">
-      <img src="fiche-comportement.webp" width="1200" height="2635" loading="lazy" decoding="async" alt="Fiche de comportement « Main levée : toast de participant », en français et en anglais : description, écran et composant concernés, puis un tableau des cas (apparition, position, nom long, plusieurs mains levées, fermeture, disparition après 5 000 ms, lecteur d’écran, navigation clavier, animation réduite, taille de cible WCAG 2.2 AA)" />
-      <p class="demo-cap">Exemple de fiche de comportement générée par le skill, puis relue et validée.</p>
+      <img src="fiche-comportement.webp" width="1200" height="2641" loading="lazy" decoding="async" alt="Fiche de comportement « Main levée : toast de participant », en français et en anglais : description, écran et composant concernés, puis un tableau des cas (apparition, position, nom long, plusieurs mains levées, fermeture, disparition après 5 000 ms, lecteur d’écran, navigation clavier, animation réduite, taille de cible WCAG 2.2 AA)" />
     </div>
   </dialog>
 
