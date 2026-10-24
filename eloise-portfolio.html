@@ -1226,6 +1226,18 @@
     .title-avatar:hover .avatar-bubble,
     .title-avatar:focus-visible .avatar-bubble { transform: translateY(0); }
   }
+  /* flèche des cartes cliquables : même famille d'icône que la flèche « haut de page » */
+  .tl-case-link { padding-right: 52px; }
+  .case-go { position: absolute; top: 50%; right: 18px; width: 20px; height: 20px; color: var(--ink-soft); transform: translateY(-50%); transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s ease; }
+  .case-go svg { display: block; width: 100%; height: 100%; }
+  .tl-case-link:hover .case-go,
+  .tl-case-link:focus-visible .case-go { color: var(--accent); transform: translateY(-50%) translateX(3px); }
+  @media (max-width: 460px) {
+    .tl-case-link { padding-right: 16px; }
+    .case-go { top: 38px; transform: none; }
+    .tl-case-link:hover .case-go,
+    .tl-case-link:focus-visible .case-go { transform: translateX(3px); }
+  }
 </style>
 </head>
 <body>
@@ -1272,7 +1284,7 @@
                 <span class="case-title">Oodrive Talk</span>
                 <span class="case-desc">Messagerie et visioconférence chiffrées de bout en bout, pensées pour les données sensibles.</span>
               </span>
-            </a>
+            <span class="case-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2h12.172z" fill="currentColor"/></svg></span></a>
             </div>
             <div class="tl-case-wrap">
               <span class="case-dot" aria-hidden="true"></span>
@@ -1282,7 +1294,7 @@
                   <span class="case-title">Un design system que l’IA comprend</span>
                   <span class="case-desc">Faire du design system d’Oodrive une référence fiable pour les devs et l’IA.</span>
                 </span>
-              </a>
+              <span class="case-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2h12.172z" fill="currentColor"/></svg></span></a>
             </div>
             <div class="tl-tools">
               <p class="tl-tools-lede">J’ai imaginé 4 outils IA qui rendent la recherche et les specs exploitables par tous.</p>
@@ -1375,7 +1387,7 @@
                 <span class="case-title">Swile Magic Link</span>
                 <span class="case-desc">Refonte de la page d'onboarding prospect pour passer d'un tunnel multi-étapes confus à une page unique personnalisée, pensée pour convertir.</span>
               </span>
-            </a>
+            <span class="case-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2h12.172z" fill="currentColor"/></svg></span></a>
             </div>
           </li>
 
