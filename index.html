@@ -903,10 +903,12 @@
   /* no hover on touch: the tooltip becomes a caption written under the photo,
      and the cards stop overlapping so the captions can't collide */
   @media (hover: none) {
-    .memories { row-gap: 32px; }
+    /* tactile : les cartes ne se chevauchent plus, la légende passe sous la photo
+       et se coupe à la largeur de la photo, l'inclinaison est adoucie */
+    .memories { row-gap: 22px; column-gap: 14px; margin-left: 0; }
 
-    .mem-card { transform: rotate(var(--r)); }
-    .mem-card:not(:first-child) { margin-left: 10px; }
+    .mem-card { width: min-content; transform: rotate(calc(var(--r) * 0.5)); }
+    .mem-card:not(:first-child) { margin-left: 0; }
 
     .mem-card figcaption {
       position: static;
@@ -1212,6 +1214,12 @@
   /* arrivée depuis un lien vers une carte (ex. #skill-fiche) */
   .tl-case-wrap[id] { scroll-margin-top: 30vh; }
   .tl-case-wrap:target > .tl-case { box-shadow: 0 0 0 2px var(--accent); }
+  /* petits écrans : la bulle du portrait part vers la gauche au lieu de déborder à droite */
+  @media (max-width: 420px) {
+    .avatar-bubble { left: auto; right: -6px; transform: translateY(4px); }
+    .title-avatar:hover .avatar-bubble,
+    .title-avatar:focus-visible .avatar-bubble { transform: translateY(0); }
+  }
 </style>
 </head>
 <body>
