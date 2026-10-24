@@ -1231,6 +1231,32 @@
     .dock-tab { padding: 0 6px; }
     .lang-switch { margin-right: 2px; }
   }
+  /* mobile : la flèche « haut de page » s'ajoute à la barre au défilement ;
+     tout se resserre pour garder au moins 12px de marge de chaque côté */
+  @media (max-width: 560px) {
+    .dock-tab { padding: 0 11px; }
+    .dock-top { width: 36px; height: 36px; }
+    .dock-sep { margin-right: 2px; }
+  }
+  @media (max-width: 460px) {
+    .dock-tab { padding: 0 8px; }
+  }
+  @media (max-width: 400px) {
+    .dock-bar { gap: 2px; }
+    .dock-tab { height: 38px; padding: 0 8px; font-size: 0.8rem; }
+    .dock-tab.is-home { width: 34px; }
+    .dock-top { width: 32px; height: 34px; }
+    .lang-switch { height: 30px; margin-right: 2px; }
+    .ls-opt, .ls-thumb { width: 27px; }
+    .ls-thumb { height: 24px; }
+    .lang-switch[data-lang="en"] .ls-thumb { transform: translateX(27px); }
+    .lang-switch[data-lang="en"]:active .ls-thumb { transform: translateX(27px) scale(0.96); }
+  }
+  @media (max-width: 350px) {
+    .dock-tab { padding: 0 5px; font-size: 0.76rem; }
+    .dock-tab.is-home { width: 30px; }
+    .dock-top { width: 28px; }
+  }
   .demo {
     width: min(1100px, 92vw);
     max-height: 90vh;
