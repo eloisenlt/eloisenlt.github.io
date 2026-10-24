@@ -739,7 +739,9 @@
   .steps.is-stack li > figure { grid-column: 2; margin: 12px 0 0; }
   .steps.is-stack li > figure figcaption { font-size: 0.8rem; }
   /* même tag que les enseignements de l'étude Talk ; filaire quand c'est l'autre designer */
-  .who { display: table; margin-top: 10px; padding: 6px 11px; border: 1px solid var(--ink); border-radius: var(--radius-sm); background: var(--ink); color: #FFFFFF; font-size: 0.68rem; font-weight: 400; line-height: 1.3; white-space: nowrap; }
+  .step-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; font-style: normal; }
+  .step-head i { margin-right: 0; }
+  .who { display: inline-block; margin-top: 0; padding: 6px 11px; border: 1px solid var(--ink); border-radius: var(--radius-sm); background: var(--ink); color: #FFFFFF; font-size: 0.68rem; font-weight: 400; line-height: 1.3; white-space: nowrap; }
   .who.is-other { background: transparent; color: var(--ink); }
   .steps i { font-style: normal; font-variant-numeric: tabular-nums; color: var(--accent); margin-right: 8px; }
   .shot img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--border); background: #FFFFFF; }
@@ -809,11 +811,11 @@
     <section>
       <h2>La démarche</h2>
       <ol class="steps is-stack">
-        <li><b><i>01</i>Donner un point de départ (2025)<small class="who is-me">Moi</small></b><span>L’IA progressait vite et l’équipe voulait s’organiser, sans savoir par où commencer. J’ai fait le point sur ce que l’IA lit dans Figma et ce qui bloquait chez nous, dans une présentation&nbsp;: règles de nommage et de description, et une checklist appliquée à nos composants.</span></li>
-        <li><b><i>02</i>Auditer<small class="who is-other">Une autre designer</small></b><span>Sur la base de ces conclusions, une autre designer a audité le fichier Figma et structuré le chantier en cinq tiers priorisés&nbsp;: variables, nommage, hygiène, infrastructure, documentation IA.</span></li>
-        <li><b><i>03</i>Trancher et corriger<small class="who is-both">Ensemble</small></b><span>Ensemble, on a animé un atelier d’équipe pour trancher la palette, puis exécuté les corrections avec Claude.</span></li>
-        <li><b><i>04</i>Installer un modèle de référence<small class="who is-me">Moi</small></b><span>Pour que les règles tiennent dans la durée, chaque composant créé ou repris suit le même modèle. Mon skill <a class="text-link" href="eloise-portfolio.html#skill-fiche">fiche de comportement</a> rédige sa spec (usage, cas à éviter, comportements, variables liées) directement dans sa description Figma, là où l’IA et les devs la lisent.</span></li>
-        <li><b><i>05</i>Outiller la génération<small class="who is-both">Ensemble</small></b><span>Deux skills, que j’ai validés et testés sur des projets réels.</span></li>
+        <li><b><em class="step-head"><i>01</i><small class="who is-me">Moi</small></em>Donner un point de départ (2025)</b><span>L’IA progressait vite et l’équipe voulait s’organiser, sans savoir par où commencer. J’ai fait le point sur ce que l’IA lit dans Figma et ce qui bloquait chez nous, dans une présentation&nbsp;: règles de nommage et de description, et une checklist appliquée à nos composants.</span></li>
+        <li><b><em class="step-head"><i>02</i><small class="who is-other">Une autre designer</small></em>Auditer</b><span>Sur la base de ces conclusions, une autre designer a audité le fichier Figma et structuré le chantier en cinq tiers priorisés&nbsp;: variables, nommage, hygiène, infrastructure, documentation IA.</span></li>
+        <li><b><em class="step-head"><i>03</i><small class="who is-both">Ensemble</small></em>Trancher et corriger</b><span>Ensemble, on a animé un atelier d’équipe pour trancher la palette, puis exécuté les corrections avec Claude.</span></li>
+        <li><b><em class="step-head"><i>04</i><small class="who is-me">Moi</small></em>Installer un modèle de référence</b><span>Pour que les règles tiennent dans la durée, chaque composant créé ou repris suit le même modèle. Mon skill <a class="text-link" href="eloise-portfolio.html#skill-fiche">fiche de comportement</a> rédige sa spec (usage, cas à éviter, comportements, variables liées) directement dans sa description Figma, là où l’IA et les devs la lisent.</span></li>
+        <li><b><em class="step-head"><i>05</i><small class="who is-both">Ensemble</small></em>Outiller la génération</b><span>Deux skills, que j’ai validés et testés sur des projets réels.</span></li>
       </ol>
     </section>
 
