@@ -829,19 +829,9 @@
         <li><strong>Écrire des descriptions pour l’IA.</strong> En anglais&nbsp;: ce que c’est, quand l’utiliser, quand ne pas l’utiliser. Couleurs liées à des variables.</li>
         <li><strong>Livrer avec une checklist.</strong> Appliquée à nos propres composants pour repérer ce qui restait à reprendre.</li>
       </ul>
-      <div class="carousel" role="region" aria-label="Extraits de la présentation">
-        <div class="car-track" tabindex="0">
-          <figure class="car-slide"><img src="ds-ia/slide-02.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : sommaire de la présentation" /></figure>
-          <figure class="car-slide"><img src="ds-ia/slide-05.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : Nommer les composants : leur rôle, pas leur apparence" /></figure>
-          <figure class="car-slide"><img src="ds-ia/slide-06.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : Nommer les propriétés : mêmes règles que les props du code" /></figure>
-        </div>
-        <div class="car-nav">
-          <button type="button" class="car-btn" data-dir="-1" aria-label="Diapositive précédente"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <span class="car-count" aria-live="polite">1 / 3</span>
-          <button type="button" class="car-btn" data-dir="1" aria-label="Diapositive suivante"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <button type="button" class="doc-open car-all" data-doc="dsDialog" aria-haspopup="dialog">Voir toute la présentation</button>
-        </div>
-      </div>
+      <figure class="shot">
+        <img src="ds-ia/slide-02.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : sommaire de la présentation" />
+      </figure>
     </section>
 
     <!-- SKILLS -->
@@ -891,20 +881,6 @@
 
   </main>
 
-  <dialog class="demo is-doc is-wide" id="dsDialog" aria-label="Présentation : un design system que l’IA comprend" tabindex="-1">
-    <button type="button" class="demo-close" aria-label="Fermer la présentation"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-    <div class="demo-scroll demo-slides">
-      <img src="ds-ia/slide-03.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : Ce que l’IA lit dans Figma via le serveur MCP" />
-      <img src="ds-ia/slide-04.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : Les prérequis côté Figma : accès au serveur MCP, pas de Code Connect, variables avec code syntax" />
-      <img src="ds-ia/slide-05.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : Nommer les composants : leur rôle, pas leur apparence" />
-      <img src="ds-ia/slide-06.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : Nommer les propriétés : mêmes règles que les props du code" />
-      <img src="ds-ia/slide-07.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : Écrire des descriptions utiles : ce que l’IA ne peut pas deviner" />
-      <img src="ds-ia/slide-08.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : Nommer les calques et les variantes" />
-      <img src="ds-ia/slide-09.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : Checklist avant de livrer un composant" />
-      <img src="ds-ia/slide-10.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : La checklist appliquée à notre design system" />
-      <img src="ds-ia/slide-11.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : À venir : nos composants Storybook lisibles par l’IA" />
-    </div>
-  </dialog>
 
   <script>
     // Présentations et exemples : chaque bouton [data-doc] ouvre sa fenêtre (même fenêtre que la démo vidéo)
