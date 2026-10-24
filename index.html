@@ -1523,7 +1523,9 @@
             io.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.2 });
+      // seuil sur le haut de l'entrée, pas sur 20 % de sa hauteur : sur mobile,
+      // l'entrée Oodrive est si haute qu'elle restait invisible au chargement
+      }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
       targets.forEach(function (el) { io.observe(el); });
     } else {
       targets.forEach(function (el) { el.classList.add('is-visible'); });
