@@ -909,6 +909,12 @@
 
     .mem-card { width: min-content; transform: rotate(calc(var(--r) * 0.5)); }
     .mem-card:not(:first-child) { margin-left: 0; }
+    /* au toucher, iOS applique :hover : la carte se redresse sur place,
+       sans le décalage ni l'agrandissement prévus pour la souris */
+    .mem-card:hover,
+    .mem-card:focus-visible { transform: rotate(0deg); box-shadow: 0 6px 18px rgba(var(--shadow-color), 0.10); }
+    .mem-card:hover figcaption,
+    .mem-card:focus-visible figcaption { transform: none; }
 
     .mem-card figcaption {
       position: static;
