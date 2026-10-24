@@ -747,7 +747,7 @@
   .ba-pair.bleed { width: min(880px, calc(100vw - 48px)); margin-left: 50%; transform: translateX(-50%); }
   .ba-pair figure, .ph-grid figure { margin: 0; }
   .ba-pair figcaption, .ph-grid figcaption, .shot figcaption { margin-top: 10px; }
-  figure + p, figure + .kpis { margin-top: 28px; }
+  figure + p, figure + .kpis, figure + .list { margin-top: 28px; }
   .shot figcaption b, .ba-pair figcaption b { color: var(--ink); font-weight: 600; }
   .carousel { margin-top: 28px; }
   .car-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border-radius: 10px; }
@@ -828,6 +828,10 @@
     <section>
       <h2>Les principes posés en 2025</h2>
       <p class="muted">J’ai formalisé des principes de nommage et de documentation dans une checklist design, validée avec les devs, à passer avant de publier tout nouveau composant. Elle a aussi servi de référence pour remettre en conformité les composants existants pendant le chantier.</p>
+      <figure class="shot">
+        <img src="ds-ia/slide-02.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : sommaire de la présentation" />
+        <figcaption>Extrait de la présentation, partagée aux équipes design et dev.</figcaption>
+      </figure>
       <ul class="list">
         <li><strong>Sans Code Connect, le nom est le seul pont avec le code.</strong> Un composant porte le même nom dans Figma et dans le code, et ce nom décrit son rôle&nbsp;: NavigationBar, jamais BarreBleueHaut. Une couleur, une position ou une version changent, le rôle reste.</li>
         <li><strong>Les propriétés Figma calquent les props du code.</strong> Même syntaxe (camelCase, booléens en is / has, valeurs explicites)&nbsp;: l’IA passe d’une variante Figma au code sans rien interpréter.</li>
@@ -835,8 +839,8 @@
         <li><strong>Aucune couleur en dur.</strong> Chaque couleur est liée à un token, pour que l’IA récupère un rôle et non un code hex.</li>
       </ul>
       <figure class="shot">
-        <img src="ds-ia/slide-02.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Diapositive : sommaire de la présentation" />
-        <figcaption>Extrait de la présentation, partagée aux équipes design et dev.</figcaption>
+        <img src="ds-ia/apres-messagebar.webp" width="1600" height="1159" loading="lazy" decoding="async" alt="Page Figma du composant MessageBar, reprise selon le modèle : variantes ordonnées et description structurée" />
+        <figcaption>MessageBar, retravaillé selon les principes de ma présentation. À droite, sa description Figma&nbsp;: la spec que les devs et l’IA lisent pour l’implémenter.</figcaption>
       </figure>
     </section>
 
@@ -858,10 +862,6 @@
     <section>
       <h2>Les résultats</h2>
       <p class="muted"><strong>Côté design et dev.</strong> Les devs s’appuient sur les descriptions des composants et sur les fiches générées par mon skill fiche de comportement pour développer plus vite avec l’IA&nbsp;: création et évolution de composants, parcours complets. Côté design, la QA est facilitée&nbsp;: les écarts entre maquette et implémentation, longtemps un point de friction entre nos équipes, sont devenus rares.</p>
-      <figure class="shot">
-        <img src="ds-ia/apres-messagebar.webp" width="1600" height="1159" loading="lazy" decoding="async" alt="Page Figma du composant MessageBar, reprise selon le modèle : variantes ordonnées et description structurée" />
-        <figcaption>MessageBar, retravaillé selon les principes de ma présentation. À droite, sa description Figma&nbsp;: la spec que les devs et l’IA lisent pour l’implémenter.</figcaption>
-      </figure>
       <ul class="kpis">
         <li><b>~80&nbsp;%</b><span>des maquettes générées conformes à Lumen sans retouche, sur 100+ maquettes de test</span></li>
         <li><b>4 designers</b><span>ont adopté les skills Lumen</span></li>
