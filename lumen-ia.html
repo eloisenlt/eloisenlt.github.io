@@ -620,6 +620,10 @@
   .lang-switch[data-lang="fr"] .ls-opt[data-l="fr"],
   .lang-switch[data-lang="en"] .ls-opt[data-l="en"] { color: #FFFFFF; }
   .lang-switch:hover .ls-opt { color: var(--ink); }
+  /* même survol que les onglets : fond bleuté, pastille noire comme l’onglet actif */
+  .lang-switch { transition: background 0.2s ease; }
+  .lang-switch:hover { background: var(--accent-tint); }
+  .lang-switch:hover .ls-thumb { background: #343A55; }
   .lang-switch[data-lang="fr"]:hover .ls-opt[data-l="fr"],
   .lang-switch[data-lang="en"]:hover .ls-opt[data-l="en"] { color: #FFFFFF; }
   .lang-switch:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
